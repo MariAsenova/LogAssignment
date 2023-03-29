@@ -17,8 +17,8 @@ namespace LogTest
         public LogFile(ISystemClock systemClock)
         {
             _systemClock = systemClock;
-            if (!Directory.Exists(@"C:\git\LogTest\LogResults"))
-                Directory.CreateDirectory(@"C:\git\LogTest\LogResults");
+            if (!Directory.Exists(@"C:\git\LogAssignment\LogResults"))
+                Directory.CreateDirectory(@"C:\git\LogAssignment\LogResults");
 
             _currentDate = systemClock.Now;
             // creates a new StreamWriter object that appends text to an existing file or creates a new file if it doesn't exist
@@ -56,7 +56,7 @@ namespace LogTest
 
         public string GetLogFilePath()
         {
-            return @"C:\git\LogTest\LogResults\Log" + _systemClock.Now.ToString("yyyyMMdd HHmmss fff") + ".log";
+            return @"C:\git\LogAssignment\LogResults\Log" + _systemClock.Now.ToString("yyyyMMdd HHmmss fff") + ".log";
         }
 
         private void WriteLogHeader()
